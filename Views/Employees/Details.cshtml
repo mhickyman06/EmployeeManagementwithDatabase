@@ -1,0 +1,66 @@
+﻿@model EmployeeManagementwithdatabase1.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .cd{
+       max-width:400px;
+    }
+    .imgs{
+        width:400px;
+    }
+</style>
+<h1>Details</h1>
+
+<div class="container m-4">
+    <div class="card cd">
+        <div class="card-header">
+           <h4>@Model.Name</h4>
+        </div>
+        <div class="card-img">
+            @{ var Photopath = "~/Img/" + (Model.PhotoPath ?? "img2.jpg"); }
+            <img class="imgs" src="@Photopath" asp-append-version="true" />
+        </div>
+        <div class="card-footer">
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+@*<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+    </dl>
+</div>
+<div>
+   
+</div>*@
